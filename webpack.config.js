@@ -8,6 +8,9 @@ const config = {
   entry: {
     main: resolve('./src/index.tsx')
   },
+  output: {
+    publicPath: '/'
+  },
   module: {
     rules: [
       {
@@ -56,6 +59,9 @@ const config = {
   },
   resolve: {
     extensions: ['.js', '.ts', '.tsx', '.scss']
+  },
+  devServer: {
+    historyApiFallback: true
   },
   plugins: [
     new HtmlWebPackPlugin({
