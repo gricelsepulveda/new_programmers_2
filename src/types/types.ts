@@ -1,7 +1,7 @@
 export type StarwarsCharType = {
   name: string,
-  height: string | number,
-  mass: string | number,
+  height: string,
+  mass: string,
   hair_color: string,
   skin_color: string,
   eye_color: string,

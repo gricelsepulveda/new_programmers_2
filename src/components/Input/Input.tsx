@@ -5,7 +5,8 @@ type InputProps = {
   name: string,
   disabled: boolean,
   readonly: boolean,
-  value: string
+  value: string,
+  onChange: (val:string[]) => void
 }
 
 const Input:React.FunctionComponent<InputProps> = (props) => {
@@ -19,6 +20,13 @@ const Input:React.FunctionComponent<InputProps> = (props) => {
     }
   }, [])
 
+  const handleChange = () => {
+    if (sandia.current != null){
+      //@ts-ignore
+      props.onChange([props.name, sandia.current.value])
+    }
+  }
+
   return (
     <input
       ref={sandia} 
@@ -27,6 +35,7 @@ const Input:React.FunctionComponent<InputProps> = (props) => {
       name={props.name}
       disabled={props.disabled}
       readOnly={props.readonly}
+      onChange={handleChange}
     />
   )
 }
